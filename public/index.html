@@ -13,17 +13,20 @@
     <h1>ToDo's</h1>
 
     <form v-on:submit.prevent="saveNewTodo">
-      <input v-model="newTodo" type="text" required>
+      <input v-model="newTodo.task" type="text" required>
+
       <label for="priorityChoice1">High</label>
-      <input type="radio" name="priority" id="priorityChoice1" value="true">
+      <input v-model="newTodo.priority" type="radio" name="priority" id="priorityChoice1" value="true">
+
       <label for="priorityChoice2">Low</label>
-      <input type="radio" name="priority" id="priorityChoice2" value="false">
+      <input v-model="newTodo.priority" type="radio" name="priority" id="priorityChoice2" value="false">
+
       <input type="submit" value="Save Item">
     </form>
 
     <ul>
       <li v-for="todo in todos">
-        <span>{{todo}}</span>
+        <span>{{todo.task}}</span>
       </li>
     </ul>
 

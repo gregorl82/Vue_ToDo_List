@@ -4,13 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: "#app",
     data: {
-      todos: ["Buy shopping", "Clean bathroom", "Car's MOT"],
-      newTodo: ""
+      todos: [
+        {task: "Buy shopping", priority: true},
+        {task: "Clean bathroom", priority: false},
+        {task: "Car's MOT", priority: true},
+      ],
+      newTodo: {
+        task: "", priority: false
+      }
     },
     methods: {
       saveNewTodo: function(){
-        this.todos.push(this.newTodo)
-        this.newTodo = ""
+        let todoObject = {
+          task: this.newTodo.task,
+          priority: this.newTodo.priority == "true"
+        }
+        this.todos.push(todoObject)
+        this.newTodo = {
+          task: "",
+          priority: false
+        }
       }
     }
   })
