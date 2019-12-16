@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {task: "Car's MOT", priority: true},
       ],
       newTodo: {
-        task: "", priority: false
+        task: "",
+        priority: false
       }
     },
     methods: {
