@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue Todo List</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
@@ -13,7 +13,11 @@
     <h1>ToDo's</h1>
 
     <form v-on:submit.prevent="saveNewTodo">
-      <input v-model="newTodo" type="text">
+      <input v-model="newTodo" type="text" required>
+      <label for="priorityChoice1">High</label>
+      <input type="radio" name="priority" id="priorityChoice1" value="true">
+      <label for="priorityChoice2">Low</label>
+      <input type="radio" name="priority" id="priorityChoice2" value="false">
       <input type="submit" value="Save Item">
     </form>
 
