@@ -11,8 +11,8 @@
   <div id="app">
     <h1>ToDo's</h1>
 
-    <form>
-      <input type="text">
+    <form v-on:submit.prevent="saveNewTodo">
+      <input v-model="newTodo" type="text">
       <input type="submit" value="Save Item">
     </form>
 
