@@ -21,11 +21,11 @@
       <label for="priorityChoice2">Low</label>
       <input v-model="newTodo.priority" type="radio" name="priority" id="priorityChoice2" value="false">
 
-      <input type="submit" value="Save Item">
+      <button type="submit">Save Item</button>
     </form>
 
     <ul>
-      <li v-for="todo in todos">
+      <li v-for="todo in todos" v-bind:class="todo.priority ? 'priority' : 'not-priority'">
         <span>{{todo.task}}</span>
       </li>
     </ul>
